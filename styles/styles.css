@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  text-align: center;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #e0e8ff;
+  background-image: url(../images/pattern-background-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container .box {
+  width: 20rem;
+  height: 30rem;
+  border-radius: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #f5f7ff;
+}
+
+.container .box #hero {
+  width: 20rem;
+  border-radius: 1rem 1rem 0 0;
+  margin: 0;
+}
+
+.container .box .description {
+  padding: 1.5rem;
+}
+
+.container .box .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+}
+
+.container .box .grid #plan {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .container {
+    background-image: url(../images/pattern-background-desktop.svg);
+  }
+}
+/*# sourceMappingURL=styles.css.map */

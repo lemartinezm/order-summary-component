@@ -1,6 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,200;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700;1,6..72,800&family=Red+Hat+Display:wght@500;700;900&display=swap");
 body {
   margin: 0;
   text-align: center;
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 16px;
+}
+
+p {
+  margin: 0;
 }
 
 .container {
@@ -23,31 +30,59 @@ body {
 
 .container .box {
   width: 20rem;
-  height: 30rem;
+  height: 35rem;
   border-radius: 1rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: #f5f7ff;
+  background-color: white;
+  -webkit-box-shadow: 0 20px 20px 1px hwb(245 16% 12%/0.116);
+          box-shadow: 0 20px 20px 1px hwb(245 16% 12%/0.116);
 }
 
 .container .box #hero {
-  width: 20rem;
+  width: 100%;
   border-radius: 1rem 1rem 0 0;
   margin: 0;
 }
 
 .container .box .description {
-  padding: 1.5rem;
+  padding: 0rem 1.5rem;
 }
 
-.container .box .grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (auto)[3];
-      grid-template-columns: repeat(3, auto);
+.container .box .description #title {
+  color: #1f2f56;
+  font-weight: 900;
+  font-size: 24px;
 }
 
-.container .box .grid #plan {
+.container .box .description .text {
+  color: #7280a7;
+  line-height: 150%;
+}
+
+.container .box .plan-box {
+  margin: 1.5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f5f7ff;
+  padding: 1rem 1rem;
+  border-radius: 1rem;
+}
+
+.container .box .plan-box .plan {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .box .plan-box .plan .time-price {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -61,11 +96,79 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-left: 1rem;
+  font-size: 15px;
+}
+
+.container .box .plan-box .plan .time-price #time {
+  color: #1f2f56;
+  font-weight: 900;
+}
+
+.container .box .plan-box #change {
+  font-size: 14px;
+  color: #3829e0;
+  font-weight: 700;
+}
+
+.container .box .plan-box #change:hover {
+  color: #6e63e9;
+  text-decoration: none;
+}
+
+.container .box .buttons {
+  margin: 0 1.5rem;
+}
+
+.container .box .buttons .payment-button {
+  background-color: #3829e0;
+  width: 100%;
+  height: 3rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: white;
+  font-family: 'Red Hat Display', sans-serif;
+  border-radius: 0.8rem;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  -webkit-box-shadow: 0 5px 25px 5px hwb(245 16% 12%/0.39);
+          box-shadow: 0 5px 25px 5px hwb(245 16% 12%/0.39);
+}
+
+.container .box .buttons .payment-button:hover {
+  cursor: pointer;
+  background-color: #6e63e9;
+}
+
+.container .box .buttons .cancel {
+  margin: 1.5rem;
+  color: #7280a7;
+  border: none;
+  background-color: white;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.container .box .buttons .cancel:hover {
+  cursor: pointer;
+  color: #1f2f56;
+  font-weight: 700;
 }
 
 @media (min-width: 768px) {
   .container {
     background-image: url(../images/pattern-background-desktop.svg);
+  }
+  .container .box {
+    width: 25rem;
+    height: 38rem;
+  }
+  .container .box .description {
+    margin: 0 1.5rem;
+  }
+  .container .box .buttons {
+    margin: 0 3rem;
   }
 }
 /*# sourceMappingURL=styles.css.map */

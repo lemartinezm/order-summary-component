@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,200;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700;1,6..72,800&family=Red+Hat+Display:wght@500;700;900&display=swap');
+
 // Variables
 $p-blue: hsl(225, 100%, 94%);
 $b-blue: hsl(245, 75%, 52%);
+$b-blue-on: hsl(245, 75%, 65%);
 $vp-blue: hsl(225, 100%, 98%);
 $desat-blue: hsl(224, 23%, 55%);
 $dark-blue: hsl(223, 47%, 23%);
+$white: hsl(225, 100%, 100%);
 
 @mixin flex-center {
   display: flex;
@@ -14,6 +18,12 @@ $dark-blue: hsl(223, 47%, 23%);
 body {
   margin: 0;
   text-align: center;
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 16px;
+}
+
+p {
+  margin: 0;
 }
 
 .container {
@@ -27,30 +37,112 @@ body {
 
   .box {
     width: 20rem;
-    height: 30rem;
+    height: 35rem;
     border-radius: 1rem;
     box-sizing: border-box;
-    background-color: $vp-blue;
+    background-color: $white;
+    box-shadow: 0 20px 20px 1px hwb(245 16% 12% / 0.116);
 
     #hero {
-      width: 20rem;
+      width: 100%;
       border-radius: 1rem 1rem 0 0;
       margin: 0;
     }
 
     .description {
-      padding: 1.5rem;
-    }
+      padding: 0rem 1.5rem;
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, auto);
-
-      #plan {
-        @include flex-center;
-        flex-direction: column;
+      #title {
+        color: $dark-blue;
+        font-weight: 900;
+        font-size: 24px;
       }
+
+      .text {
+        color: $desat-blue;
+        line-height: 150%;
+      }
+
     }
+
+    .plan-box {
+      margin: 1.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $vp-blue;
+      padding: 1rem 1rem;
+      border-radius: 1rem;
+
+      .plan {
+        display: flex;
+
+        .time-price {
+          @include flex-center;
+          flex-direction: column;
+          margin-left: 1rem;
+          font-size: 15px;
+
+          #time {
+            color: $dark-blue;
+            font-weight: 900;
+          }
+        }
+
+      }
+
+      #change {
+        font-size: 14px;
+        color: $b-blue;
+        font-weight: 700;
+      }
+
+      #change:hover {
+        color: $b-blue-on;
+        text-decoration: none;
+      }
+
+    }
+
+    .buttons {
+      margin: 0 1.5rem;
+
+      .payment-button {
+        background-color: $b-blue;
+        width: 100%;
+        height: 3rem;
+        box-sizing: border-box;
+        color: $white;
+        font-family: 'Red Hat Display', sans-serif;
+        border-radius: 0.8rem;
+        border: none;
+        font-weight: 700;
+        font-size: 14px;
+        box-shadow: 0 5px 25px 5px hwb(245 16% 12% / 0.39);
+      }
+
+      .payment-button:hover {
+        cursor: pointer;
+        background-color: $b-blue-on;
+      }
+
+      .cancel {
+        margin: 1.5rem;
+        color: $desat-blue;
+        border: none;
+        background-color: $white;
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .cancel:hover {
+        cursor: pointer;
+        color: $dark-blue;
+        font-weight: 700;
+      }
+
+    }
+
   }
 
 }
@@ -58,5 +150,18 @@ body {
 @media (min-width: 768px) {
   .container {
     background-image: url(../images/pattern-background-desktop.svg);
+
+    .box {
+      width: 25rem;
+      height: 38rem;
+
+      .description {
+        margin: 0 1.5rem;
+      }
+
+      .buttons {
+        margin: 0 3rem;
+      }
+    }
   }
 }
